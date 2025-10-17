@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Creo un auto
+        System.out.println("=== CREA LA TUA AUTO ===\n");
+        
+        System.out.print("Marca dell' auto: ");
+        String marca = input.nextLine();
+        
+        System.out.print("Modello: ");
+        String modello = input.nextLine();
+        
+        // Creo l'oggetto usando il costruttore
+        Auto mioAuto = new Auto(marca, modello);
+        
+        // Uso i metodi
+        System.out.println("\n--- AZIONI DELL' AUTO ---\n");
+        mioAuto.mostraInfo();
+        mioAuto.accendi();
+        mioAuto.chiama("Mario");
+        mioAuto.mandaMessaggio("Ciao!");
+        mioAuto.spegni();
+        
+        input.close();
+    }
+}
+
+// Classe Auto
+class Auto {
+    // Attributi
+    String marca;
+    String modello;
+    int batteria;
+    
+    // Costruttore
+    public Auto(String m, String mod) {
+        marca = m;
+        modello = mod;
+        batteria = 100;  // Parte con batteria piena
+    }
+    
+    // Metodi
+    public void mostraInfo() {
+        System.out.println("Auto: " + marca + " " + modello);
+        System.out.println("Batteria: " + batteria + "%\n");
+    }
+    
+    public void accendi() {
+        System.out.println("📱 Auto accesa!");
+    }
+    
+    public void spegni() {
+        System.out.println("📴 Auto spenta!");
+    }
+    
+    public void chiama(String persona) {
+        System.out.println("📞 Sto chiamando " + persona + "...");
+        batteria -= 5;
+        System.out.println("Batteria: " + batteria + "%");
+    }
+    
+    public void mandaMessaggio(String messaggio) {
+        System.out.println("💬 Messaggio inviato: " + messaggio);
+        batteria -= 2;
+        System.out.println("Batteria: " + batteria + "%");
+    }
+}
