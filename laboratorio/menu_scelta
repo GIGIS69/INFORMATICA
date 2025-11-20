@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+
+void gotoxy(int x, int y){
+COORD coord;
+coord.X = x;
+coord.Y = y;
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+int main(){
+int scelta=0;
+
+system("cls");
+printf("\nSCEGLI UNA DELLE OPZIONI\n");
+printf("1) Menu numero 1\n");
+printf("2) Menu numero 2\n");
+printf("3) Menu numero 3\n");
+printf("4) Esci\n");
+
+   
+    while (scelta != 4){
+        gotoxy(30, 15);
+        printf("Inserisci la tua scelta: ");
+        scanf("%d", &scelta);
+
+        system("cls"); 
+
+        switch (scelta){
+            case 1:
+                printf("Hai scelto il Menu numero 1\n");
+                break;
+            case 2:
+                printf("Hai scelto il Menu numero 2\n");
+                break;
+            case 3:
+                printf("Hai scelto il Menu numero 3\n");
+                break;
+            case 4:
+                printf("Fine\n");
+                break;
+            default:
+                printf("ERRORE: Inserisci un numero tra 1 e 4.\n");
+        }
+    }
+return 0;
+}
