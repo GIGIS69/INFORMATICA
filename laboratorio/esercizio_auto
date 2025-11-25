@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("REGISTRA L'AUTO \n");
+
+        System.out.print("Marca : ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Modello : ");
+        String cognome = scanner.nextLine();
+
+        System.out.print("Targa : ");
+        String matricola = scanner.nextLine();
+
+        System.out.print("Consumo medio (media km/l): ");
+        double media = scanner.nextDouble();
+
+        Auto auto = new Auto(nome, cognome, matricola, media);
+
+        System.out.println("\n ATTIVITÀ ");
+        auto.visualizzaProfilo();
+        auto.merenda();
+        auto.studia();
+        auto.mostraMedia();
+
+        scanner.close();
+    }
+}
+
+class Auto {
+    // Attributi
+    private String nome;       
+    private String cognome;    
+    private String matricola;  
+    private double media;      
+
+    // Costruttore
+    public Auto(String nome, String cognome, String matricola, double media) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.matricola = matricola;
+        this.media = media;
+    }
+
+    // Metodi
+    public void merenda() {
+        System.out.println(nome + " " + cognome + " si ferma per fare rifornimento.");
+    }
+
+    public void studia() {
+        System.out.println(nome + " " + cognome + " è in officina per migliorare le prestazioni.");
+    }
+
+    public void mostraMedia() {
+        System.out.println("Consumo medio attuale: " + media + " km/l");
+    }
+
+    public void visualizzaProfilo() {
+        System.out.println("\n--- PROFILO AUTO ---");
+        System.out.println("Marca: " + nome);
+        System.out.println("Modello: " + cognome);
+        System.out.println("Targa: " + matricola);
+        System.out.println("Consumo medio: " + media + " km/l");
+    }
+}
