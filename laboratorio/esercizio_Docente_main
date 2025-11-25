@@ -1,0 +1,11 @@
+public class Main {
+    public static void main(String[] args) {
+        // Creazione di un oggetto Docente
+        Docente docente1 = new Docente("Mario Rossi", "Matematica", 10);
+
+        // Uso dei metodi
+        docente1.presenta();
+        docente1.insegna();
+        docente1.aggiornaEsperienza(2);
+    }
+}
