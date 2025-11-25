@@ -1,0 +1,29 @@
+// Classe Docente
+public class Docente {
+    //  Attributi 
+    private String nome;
+    private String materia;
+    private int anniEsperienza;
+
+    // Costruttore 
+    public Docente(String nome, String materia, int anniEsperienza) {
+        this.nome = nome;
+        this.materia = materia;
+        this.anniEsperienza = anniEsperienza;
+    }
+
+    // Metodi 
+    public void insegna() {
+        System.out.println(nome + " sta insegnando " + materia + ".");
+    }
+
+    public void presenta() {
+        System.out.println("Ciao, sono " + nome + ", insegno " + materia +
+                           " e ho " + anniEsperienza + " anni di esperienza.");
+    }
+
+    public void aggiornaEsperienza(int anni) {
+        anniEsperienza += anni;
+        System.out.println(nome + " ora ha " + anniEsperienza + " anni di esperienza.");
+    }
+}
